@@ -31,7 +31,7 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby-version }}
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - run: 'wget ${{ matrix.ES_DOWNLOAD_URL }}'
       - run: 'tar -xzf elasticsearch-*.tar.gz'
       - run: "sed -i '/UseParNewGC/d' ./elasticsearch-${{ matrix.ES_VERSION }}/bin/elasticsearch.in.sh"
